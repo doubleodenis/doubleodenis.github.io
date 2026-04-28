@@ -1,10 +1,17 @@
+export interface PreviousTitle {
+  title: string;
+  period?: string;
+}
+
 export interface Experience {
   title: string;
+  titlePeriod?: string; // Period for current title specifically
   company: string;
   companyUrl: string;
-  period: string;
+  period: string; // Full tenure at company
   description: string;
   technologies: string[];
+  previousTitles?: PreviousTitle[];
 }
 
 export interface Project {
@@ -18,63 +25,56 @@ export interface Project {
 export const experiences: Experience[] = [
   {
     title: "Software Engineer 2",
-    company: "Your Company",
-    companyUrl: "https://example.com",
-    period: "2023 — Present",
+    titlePeriod: "2022 — Present",
+    company: "PROS",
+    companyUrl: "https://pros.com",
+    period: "2019 — Present",
     description:
-      "Building and maintaining scalable web applications with modern technologies. Collaborating with cross-functional teams to deliver high-quality software solutions that improve user experience and drive business value.",
-    technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "AWS"],
-  },
-  {
-    title: "Software Engineer",
-    company: "Previous Company",
-    companyUrl: "https://example.com",
-    period: "2021 — 2023",
-    description:
-      "Developed and maintained multiple client-facing applications. Implemented new features, optimized performance, and contributed to architectural decisions. Mentored junior developers and participated in code reviews.",
-    technologies: ["JavaScript", "React", "Python", "Django", "Docker"],
-  },
-  {
-    title: "Junior Developer",
-    company: "First Company",
-    companyUrl: "https://example.com",
-    period: "2019 — 2021",
-    description:
-      "Started my professional journey building responsive web applications. Learned best practices for clean code, version control, and agile methodologies. Contributed to various frontend and backend projects.",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+      "Building and maintaining internal and customer-facing advertisement solutions to travel industry clients. Collaborating with cross-functional teams to design and implement scalable features, optimize performance, and ensure high-quality user experiences.",
+    technologies: [
+      "Angular",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "Storybook",
+      "Karma",
+      "Cypress",
+    ],
+    previousTitles: [
+      { title: "Software Engineer 1" },
+      { title: "Software Engineer Intern" },
+    ],
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "CommandZone",
     description:
-      "A sleek, modern portfolio website built with Next.js and Tailwind CSS, featuring smooth animations and a beautiful dark theme. Showcases my work and skills in an engaging way.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    github: "https://github.com/doubleodenis/portfolio",
-    live: "https://denisortega.dev",
+      "A competitive stat tracker featuring an multiplayer ELO system, leaderboards, and interactive data visualizations.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Typescript",
+      "Supabase",
+      "PostgreSQL",
+      "Vitest",
+    ],
+    live: "https://mtgcommandzone.netlify.app",
   },
   {
-    title: "Project Two",
+    title: "EchoSMS",
     description:
-      "A full-stack web application that solves a real-world problem. Features user authentication, real-time updates, and a responsive design that works on all devices.",
-    technologies: ["React", "Node.js", "MongoDB", "Socket.io"],
-    github: "https://github.com/doubleodenis/project-two",
-    live: "https://project-two.com",
+      "A bulk SMS delivery platform that uses a job queue to schedule and manage message delivery through the Twilio API.",
+    technologies: ["React", "Next.js", "MongoDB", "AWS"],
   },
   {
-    title: "Project Three",
+    title: "Beck College Prep",
     description:
-      "An open-source tool that helps developers be more productive. Built with performance and developer experience in mind.",
-    technologies: ["TypeScript", "CLI", "Node.js"],
-    github: "https://github.com/doubleodenis/project-three",
-  },
-  {
-    title: "Project Four",
-    description:
-      "A mobile-first web app with offline capabilities and push notifications. Demonstrates modern PWA techniques and best practices.",
-    technologies: ["React", "PWA", "Service Workers", "IndexedDB"],
+      "Web application for a tutoring company to attract new students and manage existing ones.",
+    technologies: ["React", "GatsbyJS", "MongoDB"],
     github: "https://github.com/doubleodenis/project-four",
-    live: "https://project-four.com",
+    live: "https://beckcollegeprep.com",
   },
 ];
