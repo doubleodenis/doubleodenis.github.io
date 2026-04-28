@@ -3,84 +3,65 @@ import { motion } from "framer-motion";
 
 export const About = () => {
   return (
-    <section id="about" className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="flex items-center text-2xl md:text-3xl font-bold text-slate-100 mb-8">
-            <span className="text-cyan-400 font-mono text-xl mr-2">01.</span>
-            About Me
-            <span className="ml-4 h-px bg-slate-700 flex-1 max-w-xs" />
-          </h2>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="space-y-4 text-slate-400 text-lg leading-relaxed"
-        >
-          <p>
-            Hello! I&apos;m Denis, a passionate software engineer with a keen eye for
-            creating engaging, user-centric digital experiences. My journey in
-            software development has equipped me with a diverse skill set and a
-            deep appreciation for clean, efficient code.
-          </p>
-          <p>
-            I specialize in building modern web applications using cutting-edge
-            technologies. Whether it&apos;s crafting responsive front-end interfaces or
-            architecting robust back-end systems, I thrive on tackling complex
-            challenges and turning ideas into reality.
-          </p>
-          <p>
-            When I&apos;m not coding, you can find me exploring new technologies,
-            contributing to open-source projects, or sharing knowledge with the
-            developer community.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8"
-        >
-          <p className="text-slate-400 mb-4">
-            Here are some technologies I&apos;ve been working with:
-          </p>
-          <ul className="grid grid-cols-2 md:grid-cols-3 gap-2">
-            {[
-              "JavaScript (ES6+)",
-              "TypeScript",
-              "React",
-              "Next.js",
-              "Node.js",
-              "Python",
-              "Tailwind CSS",
-              "GraphQL",
-              "PostgreSQL",
-            ].map((tech, index) => (
-              <motion.li
-                key={tech}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className="flex items-center text-slate-400 text-sm font-mono"
-              >
-                <span className="text-cyan-400 mr-2">▹</span>
-                {tech}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
+    <section
+      id="about"
+      className="mb-24 scroll-mt-16 md:mb-32 lg:mb-36 lg:scroll-mt-24"
+      aria-label="About me"
+    >
+      <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-slate-900/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:bg-transparent lg:backdrop-blur-none">
+        <h2 className="text-sm font-bold uppercase tracking-widest text-slate-200 lg:text-cyan-400 lg:mb-8">
+          About
+        </h2>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="space-y-4 text-slate-400 leading-relaxed"
+      >
+        <p>
+          Hello! I&apos;m Denis, a passionate software engineer with a keen eye for
+          creating engaging, user-centric digital experiences. My journey in
+          software development has equipped me with a diverse skill set and a
+          deep appreciation for clean, efficient code.
+        </p>
+        <p>
+          I specialize in building modern web applications using cutting-edge
+          technologies. Whether it&apos;s crafting responsive front-end interfaces or
+          architecting robust back-end systems, I thrive on tackling complex
+          challenges and turning ideas into reality.
+        </p>
+        <p>
+          When I&apos;m not coding, you can find me exploring new technologies,
+          contributing to open-source projects, or sharing knowledge with the
+          developer community.
+        </p>
+        <p className="mt-6">
+          Here are some technologies I&apos;ve been working with:
+        </p>
+        <ul className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2">
+          {[
+            "JavaScript (ES6+)",
+            "TypeScript",
+            "React",
+            "Next.js",
+            "Node.js",
+            "Python",
+            "Tailwind CSS",
+            "PostgreSQL",
+          ].map((tech) => (
+            <li
+              key={tech}
+              className="flex items-center text-sm font-mono"
+            >
+              <span className="text-cyan-400 mr-2">▹</span>
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </motion.div>
     </section>
   );
 };
