@@ -20,6 +20,7 @@ export interface Project {
   technologies: string[];
   github?: string;
   live?: string;
+  screenshot?: string;
 }
 
 export const experiences: Experience[] = [
@@ -62,19 +63,21 @@ export const projects: Project[] = [
       "Vitest",
     ],
     live: "https://mtgcommandzone.netlify.app",
+    screenshot: "/screenshots/commandzone.png",
   },
   {
     title: "EchoSMS",
     description:
       "A bulk SMS delivery platform that uses a job queue to schedule and manage message delivery through the Twilio API.",
     technologies: ["React", "Next.js", "MongoDB", "AWS"],
+    screenshot: "/screenshots/echosms.png",
   },
   {
     title: "Beck College Prep",
     description:
       "Web application for a tutoring company to attract new students and manage existing ones.",
     technologies: ["React", "GatsbyJS", "MongoDB"],
-    github: "https://github.com/doubleodenis/project-four",
     live: "https://beckcollegeprep.com",
+    screenshot: "/screenshots/beckcollegeprep.png",
   },
 ];
