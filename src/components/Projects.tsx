@@ -1,5 +1,5 @@
 "use client";
-import { GlowingCard } from "./ui/glowing-card";
+import BorderGlow from "./ui/border-glow";
 import { projects } from "@/lib/data";
 
 export const Projects = () => {
@@ -17,10 +17,17 @@ export const Projects = () => {
 
       <div className="space-y-12">
         {projects.map((project, index) => (
-          <GlowingCard
+          <BorderGlow
             key={index}
             className="p-4 sm:p-6"
-            containerClassName="group"
+            backgroundColor="rgba(15, 23, 42)"
+            colors={["#22d3ee", "#06b6d4", "#0891b2"]}
+            glowColor="190 90 70"
+            glowIntensity={1}
+            borderRadius={12}
+            edgeSensitivity={10}
+            glowRadius={0}
+            coneSpread={10}
           >
             <div className="flex justify-between items-start mb-3">
               <svg
@@ -95,7 +102,7 @@ export const Projects = () => {
                 </li>
               ))}
             </ul>
-          </GlowingCard>
+          </BorderGlow>
         ))}
       </div>
     </section>

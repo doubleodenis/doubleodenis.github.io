@@ -1,5 +1,5 @@
 "use client";
-import { GlowingCard } from "./ui/glowing-card";
+import BorderGlow from "./ui/border-glow";
 import { experiences } from "@/lib/data";
 
 export const Experience = () => {
@@ -17,12 +17,19 @@ export const Experience = () => {
 
       <div className="space-y-12">
         {experiences.map((exp, index) => (
-          <GlowingCard
+          <BorderGlow
             key={index}
             className="p-4 sm:p-6"
-            containerClassName="group"
+            backgroundColor="rgba(15, 23, 42)"
+            colors={["#22d3ee", "#06b6d4", "#0891b2"]}
+            glowColor="190 90 70"
+            glowIntensity={1}
+            borderRadius={12}
+            edgeSensitivity={10}
+            glowRadius={0}
+            coneSpread={10}
           >
-            <div className="sm:flex sm:gap-4">
+            <div className="sm:flex sm:gap-4 p-2">
               <div className="mb-2 sm:mb-0 sm:w-28 shrink-0">
                 <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                   {exp.period}
@@ -33,7 +40,7 @@ export const Experience = () => {
                     <h3 className="text-lg font-medium leading-snug text-slate-200 group-hover:text-cyan-400 transition-colors">
                     {exp.title}
                     </h3>
-                    --
+                    —
                     <a
                     href={exp.companyUrl}
                     target="_blank"
@@ -67,7 +74,7 @@ export const Experience = () => {
                 </ul>
               </div>
             </div>
-          </GlowingCard>
+          </BorderGlow>
         ))}
       </div>
     </section>
