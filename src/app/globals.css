@@ -142,10 +142,12 @@
   0%, 100% {
     opacity: 0.8;
     transform: scale(1);
+    filter: brightness(1);
   }
   50% {
     opacity: 1;
-    transform: scale(1.4);
+    transform: scale(1.5);
+    filter: brightness(1.2);
   }
 }
 
